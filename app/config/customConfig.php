@@ -2,7 +2,7 @@
 
 return [
 			'names' =>[
-						'siteName' => 'Car Rentals'
+						'siteName' => 'ACM Rank Tracker'
 			],
 			'roles' =>[
 						'Admin' => 'Admin',

@@ -3,7 +3,7 @@
               <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-bars tooltips"></div>
           </div>
           <!--logo start-->
-          <a href="{{route('dashboard')}}" class="logo" >Car<span>Rentals</span></a>
+          <a href="{{route('dashboard')}}" class="logo" >ACM <span>Rank Tracker</span></a>
           <!--logo end-->
 
           <div class="top-nav ">

@@ -16,9 +16,9 @@
                   {{-- Task Manager --}}
                   <li>
 
-                      <a href="{{URL::route('rep.index')}}">
+                      <a href="{{URL::route('students.index')}}">
                           <i class="fa fa-users"></i>
-                          <span>VIP Reps</span>
+                          <span>Students</span>
                       </a>
                   </li>
 

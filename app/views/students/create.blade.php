@@ -8,69 +8,59 @@
                     {{ $title }}
                     <span class="pull-right">
 
-                            <a class="btn btn-success btn-sm" href="{{ URL::route('rep.index') }}"><span class="fa fa-chevron-left"></span> Reps</a>
+                            <a class="btn btn-success btn-sm" href="{{ URL::route('students.index') }}"><span class="fa fa-chevron-left"></span> Students List</a>
 
 					</span>
                 </header>
                 <div class="panel-body">
-
-                    {{Form::model($rep,['route' => ['rep.update',$rep->id], 'class' => 'form-horizontal', 'method' => 'put' ])}}
-
-
+                    {{ Form::open(array('route' => 'students.create', 'class' => 'form-horizontal')) }}
 
                     <div class="form-group">
                         {{ Form::label('name', 'Name*', array('class' => 'col-md-2 control-label')) }}
                         <div class="col-md-4">
-                            {{ Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Name')) }}
+                            {{ Form::text('name', null, array('class' => 'form-control', 'placeholder' => '')) }}
                         </div>
                     </div>
 
                     <div class="form-group">
                         {{ Form::label('email', 'Email*', array('class' => 'col-md-2 control-label')) }}
                         <div class="col-md-4">
-                            {{ Form::email('email', $rep->user->email, array('class' => 'form-control', 'placeholder' => 'Email','disabled')) }}
+                            {{ Form::email('email', null, array('class' => 'form-control', 'placeholder' => '')) }}
                         </div>
                     </div>
 
-
-                    <div class="form-group">
-                        {{ Form::label('address', 'Address', array('class' => 'col-md-2 control-label')) }}
-                        <div class="col-md-4">
-                            {{ Form::text('address', null, array('class' => 'form-control', 'placeholder' => 'Address')) }}
-                        </div>
-                    </div>
 
                     <div class="form-group">
                         {{ Form::label('phone', 'Phone Number', array('class' => 'col-md-2 control-label')) }}
                         <div class="col-md-4">
-                            {{ Form::text('phone', null, array('class' => 'form-control', 'placeholder' => 'Phone Number')) }}
+                            {{ Form::text('phone', '', array('class' => 'form-control', 'placeholder' => '')) }}
                         </div>
                     </div>
 
                     <div class="form-group">
-                        {{ Form::label('city', 'City', array('class' => 'col-md-2 control-label')) }}
+                        {{ Form::label('uva_id', 'UVA ID', array('class' => 'col-md-2 control-label')) }}
                         <div class="col-md-4">
-                            {{ Form::text('city', null, array('class' => 'form-control', 'placeholder' => 'City')) }}
+                            {{ Form::text('uva_id', '', array('class' => 'form-control', 'placeholder' => '')) }}
                         </div>
                     </div>
 
                     <div class="form-group">
-                        {{ Form::label('state', 'State', array('class' => 'col-md-2 control-label')) }}
+                        {{ Form::label('topcoder_id', 'TopCoder ID', array('class' => 'col-md-2 control-label')) }}
                         <div class="col-md-4">
-                            {{ Form::text('state', null, array('class' => 'form-control', 'placeholder' => 'State')) }}
+                            {{ Form::text('topcoder_id', '', array('class' => 'form-control', 'placeholder' => '')) }}
                         </div>
                     </div>
 
                     <div class="form-group">
-                        {{ Form::label('zip', 'Zip', array('class' => 'col-md-2 control-label')) }}
+                        {{ Form::label('codeforces_id', 'CodeForces ID', array('class' => 'col-md-2 control-label')) }}
                         <div class="col-md-4">
-                            {{ Form::text('zip', null, array('class' => 'form-control', 'placeholder' => 'Zip')) }}
+                            {{ Form::text('codeforces_id', '', array('class' => 'form-control', 'placeholder' => '')) }}
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-10">
-                            {{ Form::submit('Create Rep', array('class' => 'btn btn-primary')) }}
+                            {{ Form::submit('Create Student', array('class' => 'btn btn-primary')) }}
                         </div>
                     </div>
                     {{ Form::close() }}

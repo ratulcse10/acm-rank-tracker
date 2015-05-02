@@ -1,7 +1,7 @@
     <!--footer start-->
     <footer class="site-footer">
           <div class="text-center">
-              {{Date('Y')}} &copy; Car Rentals
+              {{Date('Y')}} &copy; ACM Rank Tracker | SCDN Lab,Dept of CSE,SUST
               <a href="#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>

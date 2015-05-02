@@ -24,10 +24,11 @@ Route::group(array('before' => 'auth'), function()
 Route::group(array('before' => 'auth|Admin'), function()
 {
 
-	Route::get('reps',['as' => 'rep.index', 'uses' => 'RepController@index']);
-	Route::get('rep/create',['as' => 'rep.create', 'uses' => 'RepController@create']);
-	Route::post('rep/create',['as' => 'rep.store', 'uses' => 'RepController@store']);
-	Route::get('rep/{id}/edit',['as' => 'rep.edit', 'uses' => 'RepController@edit']);
-	Route::put('rep/{id}',['as' => 'rep.update', 'uses' => 'RepController@update']);
-	Route::delete('reps/{id}',['as' => 'rep.delete', 'uses' => 'RepController@destroy']);
+	Route::get('students',['as' => 'students.index', 'uses' => 'StudentController@index']);
+	Route::get('students/create',['as' => 'students.create', 'uses' => 'StudentController@create']);
+	Route::post('students/create',['as' => 'students.store', 'uses' => 'StudentController@store']);
+    Route::get('students/{id}',['as' => 'students.show', 'uses' => 'StudentController@show']);
+    Route::get('students/{id}/edit',['as' => 'students.edit', 'uses' => 'StudentController@edit']);
+	Route::put('students/{id}',['as' => 'students.update', 'uses' => 'StudentController@update']);
+	Route::delete('students/{id}',['as' => 'students.delete', 'uses' => 'StudentController@destroy']);
 });

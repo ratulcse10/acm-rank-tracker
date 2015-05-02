@@ -9,40 +9,42 @@
                     {{ $title }}
                     <span class="pull-right">
 
-                            <a class="btn btn-success btn-sm btn-new-user" href="{{ URL::route('rep.create') }}">Add New Reps</a>
+                            <a class="btn btn-success btn-sm btn-new-user" href="{{ URL::route('students.create') }}">Add New Student</a>
 
 					</span>
                 </header>
                 <div class="panel-body">
-                    @if(count($reps))
+                    @if(count($students))
                         <table class="display table table-bordered table-striped" id="example">
                             <thead>
                             <tr>
-                                <th>Rep Name</th>
+                                <th>Student Name</th>
                                 <th>Email</th>
-                                <th>Address</th>
                                 <th>Phone</th>
-                                <th>City</th>
-
+                                <th>UVA ID</th>
+                                <th>TopCoder ID</th>
+                                <th>CodeForces ID</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($reps as $rep)
+                            @foreach($students as $student)
                                 <tr>
-                                    <td>{{ $rep->name }}</td>
-                                    <td>{{ $rep->user->email }}</td>
-                                    <td>{{ $rep->address }}</td>
-                                    <td>{{ $rep->phone }}</td>
-                                    <td>{{ $rep->city }}</td>
+                                    <td>{{ $student->name }}</td>
+                                    <td>{{ $student->email }}</td>
+                                    <td>{{ $student->phone }}</td>
+                                    <td>{{ $student->uva_id }}</td>
+                                    <td>{{ $student->topcoder_id }}</td>
+                                    <td>{{ $student->codeforces_id }}</td>
 
 
 
                                     <td class="text-center">
 
 
-                                        <a class="btn btn-xs btn-success btn-edit" href="{{ URL::route('rep.edit', array('id' => $rep->id)) }}">Edit</a>
-                                        <a href="#" class="btn btn-danger btn-xs btn-archive deleteBtn" data-toggle="modal" data-target="#deleteConfirm" deleteId="{{ $rep->id }}">Delete</a>
+                                        <a class="btn btn-xs btn-info btn-edit" href="{{ URL::route('students.show', array('id' => $student->id)) }}">Show</a>
+                                        <a class="btn btn-xs btn-success btn-edit" href="{{ URL::route('students.edit', array('id' => $student->id)) }}">Edit</a>
+                                        <a href="#" class="btn btn-danger btn-xs btn-archive deleteBtn" data-toggle="modal" data-target="#deleteConfirm" deleteId="{{ $student->id }}">Delete</a>
 
                                     </td>
                                 </tr>
@@ -70,7 +72,7 @@
                     Are you sure to delete?
                 </div>
                 <div class="modal-footer">
-                    {{ Form::open(array('route' => array('rep.delete', 0), 'method'=> 'delete', 'class' => 'deleteForm')) }}
+                    {{ Form::open(array('route' => array('students.delete', 0), 'method'=> 'delete', 'class' => 'deleteForm')) }}
                     <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
                     {{ Form::submit('Yes, Delete', array('class' => 'btn btn-success')) }}
                     {{ Form::close() }}
@@ -85,11 +87,12 @@
 
 @section('style')
     {{ HTML::style('assets/data-tables/DT_bootstrap.css') }}
+
 @stop
 
 
 @section('script')
-    {{ HTML::script('assets/advanced-datatable/media/js/jquery.dataTables.js') }}
+    {{ HTML::script('assets/data-tables/jquery.dataTables.js') }}
     {{ HTML::script('assets/data-tables/DT_bootstrap.js') }}
 
     <script type="text/javascript" charset="utf-8">
@@ -101,7 +104,7 @@
             // delete
             $('.deleteBtn').click(function() {
                 var deleteId = $(this).attr('deleteId');
-                var url = "<?php echo URL::route('rep.index'); ?>";
+                var url = "<?php echo URL::route('students.index'); ?>";
                 $(".deleteForm").attr("action", url+'/'+deleteId);
             });
         });

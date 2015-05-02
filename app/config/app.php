@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -126,7 +126,8 @@ return array(
 		'Intervention\Image\ImageServiceProvider', //Image
 		/* Uncomment for use in development */
 		'Way\Generators\GeneratorsServiceProvider', // Generators
-		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider' // IDE Helpers
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider', // IDE Helpers
+        'Vinelab\Http\HttpServiceProvider',
 
 	),
 
@@ -196,6 +197,7 @@ return array(
 				'View'              => 'Illuminate\Support\Facades\View',
 				'Image'             => 'Intervention\Image\Facades\Image',
 				'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
+                'MyHttp'            => 'Vinelab\Http\Facades\Client',
 
 	),
 
