@@ -55,7 +55,9 @@ class AuthController extends \BaseController {
 	}
 
 	public function dashboard(){
+        $usernumber = Student::count();
 		return View::make('dashboard')
+                    ->with('usernumber',$usernumber)
 					->with('title','Dashboard');
 	}
 

@@ -12,14 +12,12 @@
                   <!-- user login dropdown start-->
                   <li class="dropdown">
                       <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                          <img alt="" src="img/avatar1_small.jpg">
-                          <span class="username">Jhon Doue</span>
+
+                          <span class="username">Administrator</span>
                           <b class="caret"></b>
                       </a>
                       <ul class="dropdown-menu extended logout">
                           <div class="log-arrow-up"></div>
-                          <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-
                           <li><a href="{{route('password.change')}}"><i class="fa fa-cog"></i> Change Password</a></li>
                           <li><a href="{{route('logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
                       </ul>
