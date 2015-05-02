@@ -47,7 +47,12 @@
                                 <h3 class="panel-title" id="panel-title"><b>TopCoder</b><a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
                             </div>
                             <div class="panel-body">
-                                TopCoder Statistics Here
+
+                                <p><b>Handle:</b> {{$topcoder->handle}}</p>
+                                <p><b>Rating Name:</b> {{$topcoder->ratingSummary[0]->name}}</p>
+                                <p><b>Rating:</b> {{$topcoder->ratingSummary[0]->rating}}</p>
+                                <p style="{{$topcoder->ratingSummary[0]->colorStyle}}"><b>Color</b><p>
+
                             </div>
                         </div>
                     @endif
@@ -58,7 +63,12 @@
                                 <h3 class="panel-title" id="panel-title"><b>CodeForces</b><a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
                             </div>
                             <div class="panel-body">
-                                CodeForces Statistics Here
+{{--                                {{print_r($codeforces)}}--}}
+                                <p><b>Handle:</b> {{$codeforces->result[0]->handle}}</p>
+                                <p><b>Name:</b> {{$codeforces->result[0]->firstName}} {{$codeforces->result[0]->lastName}}</p>
+                                <p><b>Rank:</b> {{$codeforces->result[0]->rank}} [<b>Max:</b> {{$codeforces->result[0]->maxRank}}]</p>
+                                <p><b>Rating:</b> {{$codeforces->result[0]->rating}} [<b>Max:</b> {{$codeforces->result[0]->maxRating}}]</p>
+
                             </div>
                         </div>
                     @endif

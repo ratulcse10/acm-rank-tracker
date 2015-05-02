@@ -85,9 +85,21 @@ class StudentController extends \BaseController {
         $response = HttpClient::get($uva_link_to_get_rank);
         $uva = json_decode($response->content());
 
+        //top coder track
+        $topcoder_link_to_get_rank = 'http://api.topcoder.com/v2/users/'.$student->topcoder_id;
+        $response = HttpClient::get($topcoder_link_to_get_rank);
+        $topcoder = json_decode($response->content());
+
+        //code forces track
+        $codeforces_link_to_get_rank = 'http://codeforces.com/api/user.info?handles='.$student->codeforces_id;
+        $response = HttpClient::get($codeforces_link_to_get_rank);
+        $codeforces = json_decode($response->content());
+
         return View::make('students.show')
             ->with('student',$student)
             ->with('uva',$uva)
+            ->with('topcoder',$topcoder)
+            ->with('codeforces',$codeforces)
             ->with('title',$student->name);
 
 	}
