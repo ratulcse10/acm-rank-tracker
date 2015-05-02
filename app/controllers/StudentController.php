@@ -39,6 +39,7 @@ class StudentController extends \BaseController {
 	{
 		$rules = [
 					'name'      => 'required',
+                    'reg'      => 'required|unique:students',
 					'email'     => 'required|email|unique:students',
 		];
 
@@ -53,6 +54,7 @@ class StudentController extends \BaseController {
 		$student = new Student();
 
         $student->email = $data['email'];
+        $student->reg = $data['reg'];
         $student->name = $data['name'];
         $student->phone = $data['phone'];
         $student->uva_id = $data['uva_id'];

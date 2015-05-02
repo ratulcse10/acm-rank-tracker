@@ -23,6 +23,13 @@
                     </div>
 
                     <div class="form-group">
+                        {{ Form::label('reg', 'Registration No*', array('class' => 'col-md-2 control-label')) }}
+                        <div class="col-md-4">
+                            {{ Form::text('reg', null, array('class' => 'form-control', 'placeholder' => '')) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         {{ Form::label('email', 'Email*', array('class' => 'col-md-2 control-label')) }}
                         <div class="col-md-4">
                             {{ Form::email('email', null, array('class' => 'form-control', 'placeholder' => '')) }}

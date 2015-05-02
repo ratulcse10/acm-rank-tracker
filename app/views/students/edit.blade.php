@@ -26,9 +26,16 @@
                     </div>
 
                     <div class="form-group">
+                        {{ Form::label('reg', 'Registration No*', array('class' => 'col-md-2 control-label')) }}
+                        <div class="col-md-4">
+                            {{ Form::text('reg', $student->reg , array('class' => 'form-control', 'placeholder' => '','disabled')) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         {{ Form::label('email', 'Email*', array('class' => 'col-md-2 control-label')) }}
                         <div class="col-md-4">
-                            {{ Form::email('email', $student->email, array('class' => 'form-control', 'placeholder' => 'Email','disabled')) }}
+                            {{ Form::email('email', $student->email, array('class' => 'form-control', 'placeholder' => '','disabled')) }}
                         </div>
                     </div>
 

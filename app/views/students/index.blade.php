@@ -19,6 +19,7 @@
                             <thead>
                             <tr>
                                 <th>Student Name</th>
+                                <th>Reg</th>
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>UVA ID</th>
@@ -31,6 +32,7 @@
                             @foreach($students as $student)
                                 <tr>
                                     <td>{{ $student->name }}</td>
+                                    <td>{{ $student->reg }}</td>
                                     <td>{{ $student->email }}</td>
                                     <td>{{ $student->phone }}</td>
                                     <td>{{ $student->uva_id }}</td>

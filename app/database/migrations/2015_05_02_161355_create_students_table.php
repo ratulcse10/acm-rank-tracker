@@ -17,6 +17,7 @@ class CreateStudentsTable extends Migration {
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->string('reg')->nullable();
             $table->string('email')->nullable();
             $table->string('name')->nullable();
             $table->string('phone')->nullable();
