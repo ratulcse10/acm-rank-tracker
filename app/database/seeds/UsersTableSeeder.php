@@ -9,13 +9,13 @@ class UsersTableSeeder extends Seeder {
 	{
 		$users = [
 					[
-								'email'      => 'ratulcse27@gmail.com',
+								'email'      => 'saif.acm@gmail.com',
 								'password'   => Hash::make('a'),
 								'created_at' => date('Y-m-d H:i:s'),
 								'updated_at' => date('Y-m-d H:i:s')
 					],
 					[
-								'email'      => 'students@a.com',
+								'email'      => 'ratulcse10@gmail.com',
 								'password'   => Hash::make('a'),
 								'created_at' => date('Y-m-d H:i:s'),
 								'updated_at' => date('Y-m-d H:i:s')
